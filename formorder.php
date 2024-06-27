@@ -10,10 +10,10 @@ $sql = "SELECT w.nama_wisata, h_dewasa.harga AS harga_dewasa, h_anak.harga AS ha
         LEFT JOIN harga_tiket h_anak ON w.id_wisata = h_anak.id_wisata AND h_anak.jenis = 'Anak-anak'
         WHERE w.id_wisata = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('i', $id_wisata); //kurang i
+$stmt->bind_param('i', $id_wisata); 
 $stmt->execute();
 $result = $stmt->get_result();
-$wisata = $result->fetch_assoc(); //seharusnya fetch_assoc bukan fetch
+$wisata = $result->fetch_assoc(); 
 $nama_wisata = $wisata['nama_wisata'];
 $harga_dewasa = $wisata['harga_dewasa'];
 $harga_anak = $wisata['harga_anak'];
@@ -73,7 +73,7 @@ $harga_anak = $wisata['harga_anak'];
     <script>
         $(".btnback").on("click", function(e) {
             e.preventDefault();
-            window.history.back(); //kurang back
+            window.history.back();
         });
     </script>
 </body>
