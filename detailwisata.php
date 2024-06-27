@@ -1,14 +1,12 @@
 <?php
 
-session_start(); // Mulai sesi
+session_start(); 
 
-$activePage = 'wisata'; // Atur halaman aktif
-
-// Periksa apakah sesi akun sudah aktif
+$activePage = 'wisata'; 
 if (isset($_SESSION['id_user'])) {
-    include 'navbarafter.php'; // Panggil file navbar untuk akun yang sudah login
+    include 'navbarafter.php'; 
 } else {
-    include 'navbarbefore.php'; // Panggil file navbar untuk akun yang belum login
+    include 'navbarbefore.php';
 }
 include 'config.php';
 
