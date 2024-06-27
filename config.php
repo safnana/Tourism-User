@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";//error karena ada spasi
+$password = "";
 $dbname = "database_jj";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
