@@ -9,12 +9,12 @@ $sql = "SELECT w.nama_wisata, h_dewasa.harga AS harga_dewasa, h_anak.harga AS ha
         FROM wisata w
         LEFT JOIN harga_tiket h_dewasa ON w.id_wisata = h_dewasa.id_wisata AND h_dewasa.jenis = 'Dewasa'
         LEFT JOIN harga_tiket h_anak ON w.id_wisata = h_anak.id_wisata AND h_anak.jenis = 'Anak-anak' 
-        WHERE w.id_wisata = ?"; //error typo h_ank seharusnya h_anak
+        WHERE w.id_wisata = ?"; 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('i', $id_wisata); //error kurang i
+$stmt->bind_param('i', $id_wisata); 
 $stmt->execute();
 $result = $stmt->get_result();
-$wisata = $result->fetch_assoc(); //seharusnya fetch_assoc
+$wisata = $result->fetch_assoc(); 
 
 $nama_wisata = $wisata['nama_wisata'];
 $harga_dewasa = $wisata['harga_dewasa'];
@@ -22,8 +22,8 @@ $harga_anak = $wisata['harga_anak'];
 
 $total_harga = ($jumlahDewasa * $harga_dewasa) + ($jumlahAnak * $harga_anak);
 
-$id_user = $_SESSION['id_user']; //ada spasi
-$username = $_SESSION['usn_user']; //ada spasi
+$id_user = $_SESSION['id_user'];
+$username = $_SESSION['usn_user'];
 ?>
 
 <!DOCTYPE html>
